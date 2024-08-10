@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { type NewTaskData } from './task/task.model';
 
-@Injectable() {
-    providedIn: 'root';
-}
+@Injectable({
+  providedIn: 'root'
+})
 export class TasksService {
  private tasks = [
     {   
@@ -47,6 +47,7 @@ export class TasksService {
   }
 
   removeTask(id:string) {
+    console.log("in this.tasksService.removeTask");
     this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 }
